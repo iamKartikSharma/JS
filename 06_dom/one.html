@@ -13,8 +13,89 @@
 </head>
 <body>
     <div class="bg-black">
-        <h1 id="title" class ="heading">DOM leanring</h1>
+        <h1 id="title" class ="heading">DOM learning me and you <span style="display: none;">test text</span></h1>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
         <p>Lorem ipsum dolor sit amet. </p>
+        <input type="password" name="" id="">
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
     </div>
 </body>
 </html>
+
+<!-- DOM methods -->
+
+document.getElementById('title');
+document.getElementById('title').id; output:'title'
+document.getElementById('title').class; output:undefined
+document.getElementById('title').className;  output:'heading'
+document.getElementById('title').getAttribute('id') output: 'title'
+document.getElementById('title').getAttribute('class') output: heading
+document.getElementById('title').setAttribute('class', 'test') output: class change from heading to test;
+
+
+const title = document.getElementById('title');
+
+title.style.backgroundColor = 'green'  output:title id background change to green.
+title.style.padding = "15px"
+title.style.borderRadius = "15px"
+
+title.textContent  // it contains all the text along with hidden text.
+title.innerText  // it contains all the visible text;
+
+title.innerHTML  
+
+
+document.querySelector('h1')  output:give all content inside h1. 
+
+document.querySelector('.heading')
+
+document.querySelector('input[type="password"]') output: print the input tag.
+
+document.querySelector('ul') output: print the unorderdlist.
+
+const myul = document.querySelector('ul')
+
+myul.querySelector('li') output: all the list present in the ul. 
+
+const turnGreen = myul.querySelector('li')
+
+turnGreen.style.backgroundColor = "green" output: backgorundColor of the li turns green.
+
+turnGreen.style.padding ="10px"
+
+turnGreen.innertext output: first <li> (one) content will be print;
+
+document.querySelectorAll('li') output: nodelist(3) [li, li, li].
+
+const tempLiList = document.querySelectorAll('li')
+
+Note: in nodelist we can use foreach loop but its not an array fully.
+
+tempLiList.style.color ='green' output: error.
+tempLiList[0].style.color ='green' output: first li color change to green.
+
+const myH1 = document.querySelectorall('h1')
+
+myH1; output: NodeList [h1#title.heading]
+
+myh1[0].style.color = 'green'
+
+tempLiList; Output: NodeList(3) [li, li, li]
+
+tempLiList.forEach(function(l) {
+    l.style.backgroundColor = 'green'
+})
+
+
+document.getElementByClassName('list-item')  // return type HTMLCollection(4)
+
+const tempClasslist = document.getElementByClassName('list-item')
+
+tempClasslist.forEach // we can't use foreach in HTMLCollection
